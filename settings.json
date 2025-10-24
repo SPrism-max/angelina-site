@@ -1,0 +1,73 @@
+{
+  "person": {
+    "name": [
+      "Ангелина",
+      "АнгелинОчка",
+      "Линочка",
+      "Ангелочек",
+      "Линчик"
+    ],
+    "sex": "Female",
+    "age": 21,
+    "phrase_pos_1_girl": [
+      "ты самая невероятная подруга",
+      "ты лучший человек",
+      "ты просто",
+      "ты человек-солнышко",
+      "ты как глоток свежего воздуха",
+      "ты просто чудо",
+      "ты причина, по которой хочется улыбаться"
+    ],
+    "phrase_pos_2_girl": [
+      "в моем окружении",
+      "во всей вселенной",
+      "космос",
+      "среди всех, кого я знаю",
+      "в любом измерении",
+      "где бы ты не была",
+      "каждый день"
+    ],
+    "phrase_pos_1_boy": [
+      "ты самый лучший друг",
+      "ты надежный товарищ"
+    ],
+    "phrase_pos_2_boy": [
+      "на всем свете",
+      "которого можно представить"
+    ]
+  },
+  "design": {
+    "effects": "stars",
+    "colors": {
+      "primary": "#9b59b6",
+      "secondary": "#1abc9c",
+      "text": "#ffffff"
+    }
+  },
+  "media": {
+    "itemsPerColumn": 10, 
+    "gallery": [
+      { "type": "video", "src": "media/video1.mp4" },
+      { "type": "video", "src": "media/video2.mp4" },
+      { "type": "video", "src": "media/video3.mp4" },
+      { "type": "video", "src": "media/video4.mp4" },
+      { "type": "audio", "src": "media/audio1.mp3", "text": "UwU" },
+      { "type": "audio", "src": "media/audio2.mp3", "text": "NNNgger" },
+      { "type": "audio", "src": "media/audio3.mp3", "text": "Кто-кто разрабы???" },
+      { "type": "audio", "src": "media/audio4.mp3", "text": "Бедни ракан, ахаххаах" },
+      { "type": "audio", "src": "media/audio5.mp3", "text": "Я слишком худая(((" },
+      { "type": "audio", "src": "media/audio6.mp3", "text": "Да, я сверху)" },
+      { "type": "audio", "src": "media/audio7.mp3", "text": "ИЗИ ИЗИ ИЗИ" },
+      { "type": "audio", "src": "media/audio8.mp3", "text": "У меня кровать большая...)" },
+      { "type": "audio", "src": "media/audio9.wav", "text": "Увушка" },
+      { "type": "image", "src": "media/photo1.jpg", "text": "Моя самая любимая твоя фотография)" },
+      { "type": "image", "src": "media/photo2.jpg", "text": "Просто милая фоточка"},
+      { "type": "image", "src": "media/photo3.jpg", "text": "Мой самый любимый маник"},
+      { "type": "image", "src": "media/photo4.jpg", "text": "Тут ты просто очень красивая"},
+      { "type": "image", "src": "media/photo5.jpg", "text": "А тут ты весёлая"},
+      { "type": "image", "src": "media/photo6.jpg", "text": "На деловом"},
+      { "type": "image", "src": "media/photo7.jpg", "text": "Немного уставшая"},
+      { "type": "image", "src": "media/photo8.jpg", "text": "Ещё очень красивый маник"}
+    ]
+  }
+}
