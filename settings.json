@@ -47,10 +47,6 @@
   "media": {
     "itemsPerColumn": 10, 
     "gallery": [
-      { "type": "video", "src": "media/video1.mp4" },
-      { "type": "video", "src": "media/video2.mp4" },
-      { "type": "video", "src": "media/video3.mp4" },
-      { "type": "video", "src": "media/video4.mp4" },
       { "type": "audio", "src": "media/audio1.mp3", "text": "UwU" },
       { "type": "audio", "src": "media/audio2.mp3", "text": "NNNgger" },
       { "type": "audio", "src": "media/audio3.mp3", "text": "Кто-кто разрабы???" },
