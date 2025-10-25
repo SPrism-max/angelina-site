@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             setupGreeting(data.person);
             setupDesign(data.design);
+            if (data.backgroundMusic && data.backgroundMusic.tracks.length > 0) {
+                setupBackgroundMusic(data.backgroundMusic);
+            }
             
             if (data.media && data.media.gallery && data.media.gallery.length > 0) {
                 const gallery = data.media.gallery;
                 preloadUniqueVideos(gallery);
                 const itemsCount = data.media.itemsPerColumn || 10;
                 
-                // Создаем "умные плейлисты" для каждой колонки
                 const leftColumnItems = generateFairRandomList(gallery, itemsCount);
                 const rightColumnItems = generateFairRandomList(gallery, itemsCount);
                 
@@ -48,21 +50,35 @@ document.addEventListener('DOMContentLoaded', () => {
         isAudioContextInitialized = true;
     }
 
-    function generateFairRandomList(gallery, count) {
-        // 1. Создаем копию галереи, чтобы не изменять оригинал
-        let shuffledGallery = [...gallery];
+    // --- НОВАЯ ФУНКЦИЯ ДЛЯ УПРАВЛЕНИЯ ФОНОВОЙ МУЗЫКОЙ ---
+    function setupBackgroundMusic(musicSettings) {
+        const backgroundMusicPlayer = new Audio();
+        const tracks = musicSettings.tracks;
+        
+        if (tracks.length === 0) return;
 
-        // 2. Перемешиваем эту копию по алгоритму Фишера–Йейтса (самый надежный способ)
+        const randomTrack = tracks[Math.floor(Math.random() * tracks.length)];
+        
+        backgroundMusicPlayer.src = randomTrack;
+        backgroundMusicPlayer.volume = musicSettings.volume || 0.15;
+        backgroundMusicPlayer.loop = true;
+
+        const playMusicOnClick = () => {
+            backgroundMusicPlayer.play().catch(e => console.error("Не удалось запустить фоновую музыку:", e));
+        };
+
+        document.addEventListener('click', playMusicOnClick, { once: true });
+    }
+
+    function generateFairRandomList(gallery, count) {
+        let shuffledGallery = [...gallery];
         for (let i = shuffledGallery.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [shuffledGallery[i], shuffledGallery[j]] = [shuffledGallery[j], shuffledGallery[i]];
         }
-
-        // 3. Создаем финальный длинный список, повторяя перемешанный плейлист
         const resultList = [];
         if (shuffledGallery.length > 0) {
             for (let i = 0; i < count; i++) {
-                // Оператор % позволяет зациклить массив
                 resultList.push(shuffledGallery[i % shuffledGallery.length]);
             }
         }
@@ -215,15 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
             container.appendChild(effect);
             setTimeout(() => { effect.remove(); }, 13000);
         }, 300);
-    }
-
-    function generateRandomMediaList(gallery, count) {
-        const randomList = [];
-        for (let i = 0; i < count; i++) {
-            const randomIndex = Math.floor(Math.random() * gallery.length);
-            randomList.push(gallery[randomIndex]);
-        }
-        return randomList;
     }
 
     function setupDesign(design) {

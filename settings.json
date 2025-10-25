@@ -69,5 +69,12 @@
       { "type": "image", "src": "media/photo7.jpg", "text": "Немного уставшая"},
       { "type": "image", "src": "media/photo8.jpg", "text": "Ещё очень красивый маник"}
     ]
+  },
+  "backgroundMusic": {
+    "volume": 0.01, 
+    "tracks": [
+      "media/music1.mp3",
+      "media/music2.mp3"
+    ]
   }
 }
